@@ -1,6 +1,8 @@
 package com.example.pokemonsandbox.ui.screens
 
+import android.R.id.message
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -13,8 +15,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pokemonsandbox.R
 
 //
@@ -22,18 +26,23 @@ import com.example.pokemonsandbox.R
 //
 
 @Composable
-fun SearchPokemon(innerPadding: PaddingValues)
+fun SearchScreen()
 {
+//    val message = viewModel.message
+
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
-            .padding(innerPadding)
     ){
+        // TESTING - Show message from ViewModel
+        Text("Value of message: $message")
+
         Image(
             painter = painterResource(R.drawable.ditto),
-            contentDescription = "Ditto"
+            contentDescription = "Ditto",
+//            resourceID = R.drawable.ditto
         )
 
         Text(text = "Ditto",

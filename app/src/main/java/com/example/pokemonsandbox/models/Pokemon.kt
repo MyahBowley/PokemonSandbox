@@ -4,5 +4,6 @@ import androidx.annotation.DrawableRes
 
 data class Pokemon(
     val name: String,
-    @param:DrawableRes val resourceId: Int
+    val resourceId: Int,
+    val abilities: String
 )
